@@ -127,11 +127,16 @@ defmodule OffersHelper.Continents do
     "Antarctica" => [Enum.zip(@lat_Antarctica, @lon_Antarctica)]
   }
 
+  def get_continent_by_coords(latitude, longitude) when is_nil(latitude) or is_nil(longitude),
+    do: "Unknown continent"
+
   def get_continent_by_coords(latitude, longitude) do
     point = %Geo.Point{coordinates: {latitude, longitude}}
 
     Enum.reduce_while(@continents_coords, "Unknown continent", fn {name, coords}, acc ->
-      if Topo.contains?(%Geo.Polygon{coordinates: coords}, point), do: {:halt, name}, else: {:cont, acc}
+      if Topo.contains?(%Geo.Polygon{coordinates: coords}, point),
+        do: {:halt, name},
+        else: {:cont, acc}
     end)
   end
 end

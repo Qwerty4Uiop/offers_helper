@@ -22,7 +22,8 @@ defmodule OffersHelper.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:topo, "~> 0.4.0"}
+      {:topo, "~> 0.4.0"},
+      {:csv, "~> 2.4"}
     ]
   end
 end

@@ -7,7 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/csv" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/geo" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/parallel_stream" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/seg_seg" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/topo" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/vector" />
@@ -34,5 +36,11 @@
     <orderEntry type="library" name="stream_data" level="project" />
     <orderEntry type="library" name="benchee" level="project" />
     <orderEntry type="library" name="credo" level="project" />
+    <orderEntry type="library" name="csv" level="project" />
+    <orderEntry type="library" name="parallel_stream" level="project" />
+    <orderEntry type="library" name="ex_csv" level="project" />
+    <orderEntry type="library" name="csvlixir" level="project" />
+    <orderEntry type="library" name="cesso" level="project" />
+    <orderEntry type="library" name="inch_ex" level="project" />
   </component>
 </module>
