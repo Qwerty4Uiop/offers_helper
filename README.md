@@ -1,21 +1,34 @@
 # OffersHelper
 
-**TODO: Add description**
+## Continents grouping
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `offers_helper` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:offers_helper, "~> 0.1.0"}
-  ]
-end
+```
+$ mix run scripts/group_offers.exs
+```
+Output example:
+```
+%{
+  "Africa" => %{
+    "Admin" => 1,
+    "Business" => 3,
+    "Marketing / Comm'" => 1,
+    "Retail" => 1,
+    "Tech" => 3
+  }
+}
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/offers_helper](https://hexdocs.pm/offers_helper).
+## Scaling
+If we would have 100 000 000 job offers in our database, and 1000 new job offers per second, 
+it would be reasonably to predefine offer continent and save it to database along with other properties 
+so we don't have to define it for every row in real-time.
 
+Also it's not pointless to split this database into partitions by the most normally distributed property like profession_id,
+so we will write to physically different tables and there will be reduced load on each.
+
+## API implementation
+Run server:
+```
+mix run --no-halt
+```
+Go to localhost:4000/offers with example parameters: [Example](http://localhost:4000/offers?latitude=48.8659387&longitude=2.34532&radius=10)
