@@ -30,7 +30,7 @@ defmodule OffersHelper do
             new_job =
               job
               |> Map.delete("profession_id")
-              |> Map.put("distance", distance / 1000)
+              |> Map.put("distance", Float.round(distance / 1000, 2))
               |> Map.put("category", category)
 
             [new_job | acc]
