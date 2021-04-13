@@ -32,3 +32,19 @@ Run server:
 mix run --no-halt
 ```
 Go to localhost:4000/offers with example parameters: [Example](http://localhost:4000/offers?latitude=48.8659387&longitude=2.34532&radius=10)
+
+The response will be a list of job offers, sorted by closeness to request coordinates.
+
+Example response:
+```
+[
+    {
+        "office_longitude":"2.3432057",
+        "office_latitude":"48.8660458",
+        "name":"Consultant(e) Transformation Digitale Junior ",
+        "distance":0.16,
+        "contract_type":"FULL_TIME",
+        "category":"Conseil"
+    }
+]
+```
