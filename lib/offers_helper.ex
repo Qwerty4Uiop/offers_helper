@@ -13,6 +13,9 @@ defmodule OffersHelper do
         |> CSV.decode!(headers: true)
         |> Enum.to_list()
 
+  def get_professions, do: @professions
+  def get_all_jobs, do: @jobs
+
   def get_job_offers(%{latitude: latitude, longitude: longitude, radius: radius}) do
     @jobs
     |> Enum.reduce([], fn job, acc ->

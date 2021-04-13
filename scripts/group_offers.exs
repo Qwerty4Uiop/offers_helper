@@ -2,19 +2,9 @@ defmodule OffersGrouper do
   alias OffersHelper.Continents
 
   def group_offers do
-    professions =
-      "../technical-test-professions.csv"
-      |> Path.expand(__DIR__)
-      |> File.stream!()
-      |> CSV.decode!(headers: true)
-      |> Enum.to_list()
-      |> Enum.map(fn %{"id" => id, "category_name" => name} -> {id, name} end)
-      |> Enum.into(%{})
+    professions = OffersHelper.get_professions()
 
-    "../technical-test-jobs.csv"
-    |> Path.expand(__DIR__)
-    |> File.stream!()
-    |> CSV.decode!(headers: true)
+    OffersHelper.get_all_jobs()
     |> Enum.reduce(%{}, fn job, acc ->
       category = professions[job["profession_id"]] || "Unknown category"
       job_latitude = parse_coord(job["office_latitude"])
