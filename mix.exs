@@ -14,7 +14,7 @@ defmodule OffersHelper.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :plug_cowboy],
       mod: {OffersHelper.Application, []}
     ]
   end
@@ -23,7 +23,10 @@ defmodule OffersHelper.MixProject do
   defp deps do
     [
       {:topo, "~> 0.4.0"},
-      {:csv, "~> 2.4"}
+      {:csv, "~> 2.4"},
+      {:plug_cowboy, "~> 2.0"},
+      {:poison, "~> 4.0.1"},
+      {:geocalc, "~> 0.8"}
     ]
   end
 end
