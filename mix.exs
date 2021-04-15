@@ -26,7 +26,8 @@ defmodule OffersHelper.MixProject do
       {:csv, "~> 2.4"},
       {:plug_cowboy, "~> 2.0"},
       {:poison, "~> 4.0.1"},
-      {:geocalc, "~> 0.8"}
+      {:geocalc, "~> 0.8"},
+      {:table_rex, "~> 3.1.1"}
     ]
   end
 end
